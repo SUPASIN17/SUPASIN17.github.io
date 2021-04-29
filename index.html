@@ -50,6 +50,12 @@
     }
 
     async function shareMsg() {
+      await liff.shareTargetPicker([
+        {
+          "type": "text",
+          "text" : "testing shareTargetPicker!!"
+        }
+      ])
     }
 
     function logOut() {
@@ -61,9 +67,9 @@
       liff.closeWindow()
     }
 
-    async function scanCode() {
+    // async function scanCode() {
 
-    }
+    // }
 
     function openWindow() {
       liff.openWindow({
