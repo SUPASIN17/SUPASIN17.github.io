@@ -34,7 +34,7 @@
   <button id="btnMsg" onclick="sendMsg()">Send Message</button>
   <button id="btnShare" onclick="shareMsg()">Share Target Picker</button>
   <button onclick="openWindow()">Open Window</button>
-  <button id="btnScanCode" onclick="scanCode()">Scan Code</button>
+  <button id="btnScanCode" onclick="window.location='https://line.me/R/nv/QRCodeReader'">Scan Code</button>
   <button id="btnLogOut" onclick="logOut()">Log Out</button>
   <button id="btnClose" onclick="closed()">Close</button>
 
@@ -59,8 +59,7 @@
     }
 
     async function scanCode() {
-      const result = await liff.scanCode()
-      document.getElementById("scanCode").append(result.value)
+
     }
 
     function openWindow() {
@@ -131,6 +130,13 @@
       getContext()
       // getFriendship()
       // createUniversalLink()
+       
+      const queryString = decodeURIComponent(window.location.search)
+      const params = new URLSearchParams(queryString)
+      if(params.get("param") !== null) {
+        document.getElementByTagName("h1")[0].innerHTML = params.get("param")
+      }
+      
     }
     main()
   </script>
