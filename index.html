@@ -56,6 +56,7 @@
     }
 
     function closed() {
+      liff.closeWindow()
     }
 
     async function scanCode() {
@@ -130,13 +131,13 @@
       getContext()
       // getFriendship()
       // createUniversalLink()
-       
+
       const queryString = decodeURIComponent(window.location.search)
       const params = new URLSearchParams(queryString)
-      if(params.get("param") !== null) {
+      if (params.get("param") !== null) {
         document.getElementByTagName("h1")[0].innerHTML = params.get("param")
       }
-      
+
     }
     main()
   </script>
