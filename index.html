@@ -126,11 +126,14 @@
 
     async function main() {
       await liff.init({ liffId: "1655940344-E3Njrdz8" })
-      getEnvironment()
-      getUserProfile()
-      getContext()
-      // getFriendship()
-      // createUniversalLink()
+      document.getElementById("isLoggedIn").append(liff.isLoggedIn())
+      if (liff.isLoggedIn()) {
+        getEnvironment()
+        getUserProfile()
+        getContext()
+        // getFriendship()
+        // createUniversalLink()
+      }
 
       const queryString = decodeURIComponent(window.location.search)
       const params = new URLSearchParams(queryString)
